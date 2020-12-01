@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [countries, setCountries] = useState([])
+  // useState for WorldWide
+  const[country, setCountry] = useState('worldwide')
 
   useEffect(() => {
     const getCountriesData = async () => {
@@ -29,8 +31,8 @@ function App() {
       <h1>COVID-19 TRACKER</h1>
       <FormControl className="app__dropdown">
         <Select 
-            variant="outlined" value='abc'>
-
+            variant="outlined" value={country}>
+              <MenuItem value="worldwide">WorldWide</MenuItem>
             {
               countries.map(country => (
                 <MenuItem value={country.value}>{country.name}</MenuItem>
