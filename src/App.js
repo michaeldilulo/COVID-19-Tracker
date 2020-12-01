@@ -1,10 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import { FormControl, Select, MenuItem } from '@material-ui/core'
 
 function App() {
   return (
     <div className="App">
-        <h1>Covid-19 Tracker</h1>
+      <div className="app__header">
+      <h1>COVID-19 TRACKER</h1>
+      <FormControl className="app__dropdown">
+        <Select 
+          variant="outlined" value='abc'>
+          
+          <MenuItem value="worldwide">WorldWide</MenuItem>
+          <MenuItem value="worldwide">Option Two</MenuItem>
+          <MenuItem value="worldwide">Option Three</MenuItem>
+          <MenuItem value="worldwide">Option Four</MenuItem>
+
+          </Select>
+      </FormControl>
+      </div>
 
       {/* Header */}
 
@@ -17,7 +31,7 @@ function App() {
       {/* Table */}
 
       {/* Graph */}
-      
+
       {/* Map */}
     </div>
   );
