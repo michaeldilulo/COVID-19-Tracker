@@ -27,8 +27,10 @@ function App() {
 
   const onCountryChange = async (event) => {
     const countryCode = event.target.value;
-
     setCountry(countryCode)
+
+    // Calls that will be made to render the data to the screen
+    const url = countryCode === 'worldwide' ? 'https://disease.sh/v3/covid-19/all' : `https://disease.sh/v3/covid-19/countries/${countryCode}`
   }
 
 
