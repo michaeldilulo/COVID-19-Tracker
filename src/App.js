@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import { FormControl, Select, MenuItem } from '@material-ui/core'
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import InfoBox from './InfoBox';
 
 function App() {
   const [countries, setCountries] = useState([])
-  // useState for WorldWide
   const[country, setCountry] = useState('worldwide')
 
   useEffect(() => {
@@ -25,7 +25,6 @@ function App() {
   }, [])
 
   const onCountryChange = async (event) => {
-    // grabs the selected value
     const countryCode = event.target.value;
 
     setCountry(countryCode)
@@ -49,10 +48,13 @@ function App() {
           </Select>
       </FormControl>
       </div>
+
+      <div className="app__stats">
+        <InfoBox title="Coronavirus Cases" total={2000} cases={123} />
+        <InfoBox title="Recovered" total={3000} cases={1234} />
+        <InfoBox title="Deaths" total={4000} cases={12345} />
+      </div>
       
-      {/* Info boxes */}
-      {/* Info boxes */}
-      {/* Info boxes */}
 
       {/* Table */}
 
