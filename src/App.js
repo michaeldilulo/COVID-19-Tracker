@@ -3,6 +3,7 @@ import './App.css';
 import { FormControl, Select, MenuItem } from '@material-ui/core'
 import React, { useEffect, useState } from 'react';
 import InfoBox from './InfoBox';
+import Map from './Map'
 
 function App() {
   const [countries, setCountries] = useState([])
@@ -61,6 +62,7 @@ function App() {
       {/* Graph */}
 
       {/* Map */}
+      <Map />
     </div>
   );
 }
