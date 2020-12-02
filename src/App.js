@@ -4,6 +4,7 @@ import { FormControl, Select, MenuItem, Card, CardContent } from '@material-ui/c
 import React, { useEffect, useState } from 'react';
 import InfoBox from './InfoBox';
 import Map from './Map'
+import Table from './Table'
 
 function App() {
   const [countries, setCountries] = useState([])
