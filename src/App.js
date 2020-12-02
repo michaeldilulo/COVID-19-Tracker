@@ -7,7 +7,8 @@ import Map from './Map'
 
 function App() {
   const [countries, setCountries] = useState([])
-  const[country, setCountry] = useState('worldwide')
+  const [country, setCountry] = useState('worldwide')
+  const [countryInfo, setCountryInfo] = useState({})
 
   useEffect(() => {
     const getCountriesData = async () => {
@@ -31,7 +32,16 @@ function App() {
 
     // Calls that will be made to render the data to the screen
     const url = countryCode === 'worldwide' ? 'https://disease.sh/v3/covid-19/all' : `https://disease.sh/v3/covid-19/countries/${countryCode}`
+
+    await fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        setCountry(countryCode)
+        // All of the data from the country response
+      setCountryInfo(data)
+    })
   }
+
 
 
   return (
