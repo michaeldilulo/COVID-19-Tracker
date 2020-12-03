@@ -45,19 +45,15 @@ function App() {
     const countryCode = event.target.value;
     setCountry(countryCode)
 
-    // Calls that will be made to render the data to the screen
     const url = countryCode === 'worldwide' ? 'https://disease.sh/v3/covid-19/all' : `https://disease.sh/v3/covid-19/countries/${countryCode}`
 
     await fetch(url)
       .then(response => response.json())
       .then(data => {
         setCountry(countryCode)
-        // All of the data from the country response
       setCountryInfo(data)
     })
   }
-
-
 
   return (
     <div className="app">

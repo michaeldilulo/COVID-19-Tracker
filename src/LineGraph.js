@@ -65,8 +65,6 @@ const options = {
 function LineGraph({casesType='cases'}) {
     const [data, setData] = useState({})
 
-    //https://disease.sh/v3/covid-19/historical/all?lastdays=120
-
 useEffect(() => {
     const fetchData = async () => {
         await fetch('https://disease.sh/v3/covid-19/historical/all?lastdays=120')
@@ -78,7 +76,6 @@ useEffect(() => {
     }
     fetchData();
     }, [casesType])
-// data?. is optional chaining, helps make the error handling better so it doesn't just crash. Just returns it as 'undefined'. Elegant way of seeing if Data exists
     return (
         <div>
             {data?.length > 0 && (
