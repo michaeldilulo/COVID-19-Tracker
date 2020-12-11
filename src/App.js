@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import InfoBox from './InfoBox';
 import Map from './Map'
 import Table from './Table'
-import { sortData } from './util'
+import { sortData, prettyPrintStat } from './util'
 import LineGraph from './LineGraph'
 import "leaflet/dist/leaflet.css"
 
@@ -84,9 +84,9 @@ function App() {
       </div>
 
       <div className="app__stats">
-        <InfoBox title="Coronavirus Cases" total={countryInfo.cases} cases={countryInfo.todayCases} />
-        <InfoBox title="Recovered" total={countryInfo.recovered} cases={countryInfo.todayRecovered} />
-        <InfoBox title="Deaths" total={countryInfo.deaths} cases={countryInfo.todayDeaths} />
+        <InfoBox title="Coronavirus Cases" total={countryInfo.cases} cases={prettyPrintStat(countryInfo.todayCases)} />
+        <InfoBox title="Recovered" total={countryInfo.recovered} cases={prettyPrintStat(countryInfo.todayRecovered)} />
+        <InfoBox title="Deaths" total={countryInfo.deaths} cases={prettyPrintStat(countryInfo.todayDeaths)} />
       </div>
       
       {/* Map */}
