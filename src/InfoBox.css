@@ -13,6 +13,10 @@
   margin-bottom: 0.5rem;
 }
 
+.infoBox--selected {
+  border-top: 10px solid greenyellow;
+}
+
 .infoBox__total {
   color: #6c757d;
   font-weight: 700 !important;
