@@ -21,6 +21,10 @@
   margin-bottom: 20px;
 }
 
+.app__right {
+  display: flex;
+}
+
 body {
   background-color: #f5f6fa;
 }
