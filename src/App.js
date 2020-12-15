@@ -58,10 +58,6 @@ function App() {
       .then(data => {
         setCountry(countryCode)
       setCountryInfo(data)
-
-        // This would be for selecting country and having the map move to it.
-        // setMapCenter([data.countryInfo.lat, data.countryInfo.long])
-        // setMapZoom(4)
     })
   }
 
@@ -85,9 +81,9 @@ function App() {
       </div>
 
       <div className="app__stats">
-        <InfoBox siRed active={casesType === "cases"} onClick={(e) => setCasesType("cases")} title="Coronavirus Cases" total={prettyPrintStat(countryInfo.cases)} cases={prettyPrintStat(countryInfo.todayCases)} />
+        <InfoBox isRed active={casesType === "cases"} onClick={(e) => setCasesType("cases")} title="Coronavirus Cases" total={prettyPrintStat(countryInfo.cases)} cases={prettyPrintStat(countryInfo.todayCases)} />
         <InfoBox active={casesType === "recovered"} onClick={(e) => setCasesType("recovered")} title="Recovered" total={prettyPrintStat(countryInfo.recovered)} cases={prettyPrintStat(countryInfo.todayRecovered)} />
-        <InfoBox siRed active={casesType ==="deaths"} onClick={(e) => setCasesType("deaths")} title="Deaths" total={prettyPrintStat(countryInfo.deaths)} cases={prettyPrintStat(countryInfo.todayDeaths)} />
+        <InfoBox isRed active={casesType ==="deaths"} onClick={(e) => setCasesType("deaths")} title="Deaths" total={prettyPrintStat(countryInfo.deaths)} cases={prettyPrintStat(countryInfo.todayDeaths)} />
       </div>
       
       {/* Map */}
